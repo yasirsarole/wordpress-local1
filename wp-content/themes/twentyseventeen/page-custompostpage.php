@@ -1,6 +1,4 @@
-<?php get_header(); ?>
-
-	<?php 
+	<?php
 	$PostType = 'post';
 	$PostStatus = 'publish';
 	$PostsPerPage = -1;
@@ -19,9 +17,9 @@
 
 		$the_query = new WP_Query($args); //calling the post with the above arguments
 		?>
-		 
-		<?php if ( $the_query->have_posts() ) : ?> 
-		 
+
+		<?php if ( $the_query->have_posts() ) : ?>
+
 		<ul>
 		<!-- the loop -->
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -32,10 +30,8 @@
 		<?php endwhile; ?>
 		<!-- end of the loop -->
 		</ul>
-		 
+
 		<?php wp_reset_postdata(); ?>
 
 		<?php endif; ?>
 	<?php } ?>
-
-<?php get_footer(); ?>
